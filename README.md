@@ -12,11 +12,6 @@ Demonstrate that:
 - forged client `X-Forwarded-For` values are ignored;
 - testing is documented with `curl`.
 
-## Why this version is better for the assignment
-
-The original interpretation with chained nginx instances is useful for showing append behavior, but it leaves a gap when requests can enter through any nginx.
-
-This version treats **every exposed nginx as a trust boundary**. That matches the assignment wording more safely: no matter which nginx receives the request first, it resets `X-Forwarded-For` to the actual peer address.
 
 ## Architecture
 
